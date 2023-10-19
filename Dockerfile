@@ -96,15 +96,11 @@ ENV HOME /home/vosk-user/vosk/
 WORKDIR ${HOME}
 USER vosk-user
 
-CMD uvicorn src.fast:app --host 0.0.0.0 --port 8084 --reload
-
-#CMD python -m silero_api_server
-#CMD python3 -m flask run --host=0.0.0.0
-#CMD python3 __main__.py
+CMD uvicorn src.fast:app --host 0.0.0.0 --port 8085 --reload
 
 # Docker:
 # docker build -t vosk .
-# docker run -it -dit --name vosk -p 8083:8083  --gpus all --restart unless-stopped vosk:latest
+# docker run -it -dit --name vosk -p 8085:8085  --gpus all --restart unless-stopped vosk:latest
 
 # Debug:
 # docker container attach sai
