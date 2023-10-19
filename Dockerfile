@@ -96,7 +96,7 @@ ENV HOME /home/vosk-user/vosk/
 WORKDIR ${HOME}
 USER vosk-user
 
-CMD uvicorn src.fast:app --host 0.0.0.0 --port 8083 --reload
+CMD uvicorn src.fast:app --host 0.0.0.0 --port 8084 --reload
 
 #CMD python -m silero_api_server
 #CMD python3 -m flask run --host=0.0.0.0
