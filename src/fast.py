@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile, Response
 from pydantic import BaseModel
-#from stt import transcribe
-from tts import speak
+from stt import transcribe
+
 
 app = FastAPI()
 
@@ -18,14 +18,8 @@ class TTSRequest(BaseModel):
 async def hello():
     return {"hello": "from SAI"}
 
-#@app.post("/transcribe")
-#async def transcribes(request: TranscribeRequest):
-#    audio = request.audio
-#    text = await transcribe(audio)
-#    return {"text": text}
-
-
-@app.post("/tts")
-async def tts(request: TTSRequest):
-    audio = speak(request.text, request.speaker)
-    return Response(audio, media_type="audio/mpeg")
+@app.post("/transcribe")
+async def transcribes(request: TranscribeRequest):
+    audio = request.audio
+    text = await transcribe(audio)
+    return {"text": text}
