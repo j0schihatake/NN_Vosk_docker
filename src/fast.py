@@ -16,7 +16,7 @@ class TTSRequest(BaseModel):
 
 @app.get("/")
 async def hello():
-    return {"hello": "from SAI"}
+    return {"hello": "from vosk"}
 
 @app.post("/transcribe")
 async def transcribes(request: TranscribeRequest):
