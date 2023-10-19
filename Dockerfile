@@ -103,4 +103,4 @@ CMD uvicorn src.fast:app --host 0.0.0.0 --port 8085 --reload
 # docker run -it -dit --name vosk -p 8085:8085  --gpus all --restart unless-stopped vosk:latest
 
 # Debug:
-# docker container attach sai
+# docker container attach vosk
