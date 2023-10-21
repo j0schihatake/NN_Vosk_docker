@@ -6,6 +6,7 @@ import io
 model = vosk.Model("model")
 recognizer = None
 
+
 async def initialize():
     global recognizer
     recognizer = vosk.KaldiRecognizer(model, 16000)

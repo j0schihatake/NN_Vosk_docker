@@ -60,12 +60,6 @@ RUN python3 -m pip install torch torchvision torchaudio
 # Устанавливаем модуль для распознавания текста:
 RUN python3 -m pip install vosk
 
-# Воспроизведение из контейнера:
-#RUN python3 -m pip install sounddevice
-
-# Сервер Flask:
-#RUN python3 -m pip install flask
-
 # FastApi
 RUN python3 -m pip install pydantic uvicorn[standard] fastapi
 
@@ -84,6 +78,7 @@ RUN cd /home/vosk-user/vosk
 
 # Тут переместить app.py в корень (для fastapi, все переезжает в папку до src)
 ADD src/fast.py /home/vosk-user/vosk/src
+
 ADD src/stt.py /home/vosk-user/vosk/
 
 COPY model/vosk/complete/small4/model /home/vosk-user/vosk/model
